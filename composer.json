@@ -1,4 +1,15 @@
 {
+    "name": "qsnh/eshanghu-pay",
+    "description": "eshanghu pay library.",
+    "keywords": ["pay", "易商户", "eshanghu"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "XiaoTeng",
+            "email": "616896861@qq.com"
+        }
+    ],
     "require": {
         "php": ">=7.1.3",
         "guzzlehttp/guzzle": "^6.3"
