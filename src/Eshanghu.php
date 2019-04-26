@@ -17,6 +17,7 @@ class Eshanghu
 {
     const WECHAT_NATIVE_URL = 'https://1shanghu.com/api/wechat/native';
     const QUERY_URL = 'https://1shanghu.com/api/query';
+    const WECHAT_JSAPI_URL = 'https://1shanghu.com/api/wechat/mp';
 
     public $appKey;
     public $appSecret;
@@ -51,6 +52,31 @@ class Eshanghu
         $data['sign'] = Signer::getSign($data, $this->appSecret);
 
         return $this->request(self::WECHAT_NATIVE_URL, $data);
+    }
+
+    /**
+     * 微信JSAPI支付.
+     *
+     * @param string $outTradeNo
+     * @param string $subject
+     * @param int    $totalFee
+     * @param string $openid
+     * @param string $extra
+     */
+    public function mp($outTradeNo, $subject, $totalFee, $openid, $extra = '')
+    {
+        $data = [
+            'app_key' => $this->appKey,
+            'openid' => $openid,
+            'out_trade_no' => $outTradeNo,
+            'total_fee' => $totalFee,
+            'subject' => $subject,
+            'extra' => $extra,
+            'notify_url' => $this->notify,
+        ];
+        $data['sign'] = Signer::getSign($data, $this->appSecret);
+
+        return $this->request(self::WECHAT_JSAPI_URL, $data);
     }
 
     /**
