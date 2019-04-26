@@ -80,6 +80,18 @@ class Eshanghu
     }
 
     /**
+     * openid获取的url.
+     *
+     * @param string $callbackUrl
+     */
+    public function getOpenidUrl(string $callbackUrl)
+    {
+        $url = 'https://1shanghu.com/wechat/login?return_url='.$callbackUrl;
+
+        return $url;
+    }
+
+    /**
      * 回调验证
      *
      * @param array $data
