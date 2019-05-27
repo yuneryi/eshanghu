@@ -2,7 +2,7 @@
 
 require_once '../vendor/autoload.php';
 
-$config = require_once '../eshanghu.php';
+$config = require_once './eshanghu-dev.php';
 
 $eshanghu = new \Eshanghu\Eshanghu($config);
 
@@ -11,7 +11,7 @@ $subject = '商品名称';
 $totalFee = 1; // 单位：分
 $extra = 'diy your self';
 
-$response = $eshanghu->create($outTradeNo, $subject, $totalFee, $extra);
+$response = $eshanghu->native($outTradeNo, $subject, $totalFee, $extra);
 
 var_dump($response);
 

@@ -15,9 +15,9 @@ use Eshanghu\Exceptions\HttpRequestErrorException;
 
 class Eshanghu
 {
-    const WECHAT_NATIVE_URL = 'https://1shanghu.com/api/wechat/native';
+    const WECHAT_NATIVE_URL = 'https://1shanghu.com/api/v2/wechat/native';
     const QUERY_URL = 'https://1shanghu.com/api/query';
-    const WECHAT_JSAPI_URL = 'https://1shanghu.com/api/wechat/mp';
+    const WECHAT_JSAPI_URL = 'https://1shanghu.com/api/v2/wechat/mp';
 
     public $appKey;
     public $appSecret;
@@ -39,7 +39,7 @@ class Eshanghu
         ]);
     }
 
-    public function create($outTradeNo, $subject, $totalFee, $extra = '')
+    public function native($outTradeNo, $subject, $totalFee, $extra = '')
     {
         $data = [
             'app_key' => $this->appKey,
@@ -48,6 +48,7 @@ class Eshanghu
             'subject' => $subject,
             'extra' => $extra,
             'notify_url' => $this->notify,
+            'sub_mch_id' => $this->subMchId,
         ];
         $data['sign'] = Signer::getSign($data, $this->appSecret);
 
@@ -73,6 +74,7 @@ class Eshanghu
             'subject' => $subject,
             'extra' => $extra,
             'notify_url' => $this->notify,
+            'sub_mch_id' => $this->subMchId,
         ];
         $data['sign'] = Signer::getSign($data, $this->appSecret);
 
@@ -86,7 +88,7 @@ class Eshanghu
      */
     public function getOpenidUrl(string $callbackUrl)
     {
-        $url = 'https://1shanghu.com/wechat/login?return_url='.$callbackUrl;
+        $url = sprintf('https://1shanghu.com/v2/wechat/login?app_key=%s&sub_mch_id=%s&callback=%s', $this->appKey, $this->subMchId, $callbackUrl);
 
         return $url;
     }

@@ -2,7 +2,7 @@
 
 require_once '../vendor/autoload.php';
 
-$config = require_once '../eshanghu.php';
+$config = require_once './eshanghu-dev.php';
 
 $eshanghu = new \Eshanghu\Eshanghu($config);
 
