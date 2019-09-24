@@ -1,6 +1,6 @@
 ## 易商户支付扩展包
 
-网址：[https://1shanghu.com](https://1shanghu.com)
+网址：[http://www.yuneryi.com](http://www.yuneryi.com)
 
 注意，v2.1及之前版本对应易商户API的v1接口版本。
 
