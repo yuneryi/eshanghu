@@ -118,7 +118,7 @@ class Yuneryi
      *
      * @return mixed
      *
-     * @throws EshanghuException
+     * @throws YuneryiException
      * @throws HttpRequestErrorException
      */
     public function queryUseOrderSn($orderSn)
@@ -138,7 +138,7 @@ class Yuneryi
      *
      * @return mixed
      *
-     * @throws EshanghuException
+     * @throws YuneryiException
      * @throws HttpRequestErrorException
      */
     public function queryUseOutTradeNo($outTradeNo)
@@ -158,7 +158,7 @@ class Yuneryi
      *
      * @return mixed
      *
-     * @throws EshanghuException
+     * @throws YuneryiException
      * @throws HttpRequestErrorException
      */
     public function query(array $data)
@@ -176,7 +176,7 @@ class Yuneryi
      *
      * @return mixed
      *
-     * @throws EshanghuException
+     * @throws YuneryiException
      * @throws HttpRequestErrorException
      */
     public function request($url, array $data)
