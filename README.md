@@ -2,7 +2,7 @@
 
 网址：[http://www.yuneryi.com](http://www.yuneryi.com)
 
-注意，v2.1及之前版本对应易商户API的v1接口版本。
+注意，v2.1及之前版本对应云尔易付API的v1接口版本。
 
 ## 用法
 
