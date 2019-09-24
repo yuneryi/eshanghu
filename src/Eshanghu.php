@@ -15,9 +15,9 @@ use Eshanghu\Exceptions\HttpRequestErrorException;
 
 class Eshanghu
 {
-    const WECHAT_NATIVE_URL = 'https://1shanghu.com/api/v2/wechat/native';
-    const QUERY_URL = 'https://1shanghu.com/api/query';
-    const WECHAT_JSAPI_URL = 'https://1shanghu.com/api/v2/wechat/mp';
+    const WECHAT_NATIVE_URL = 'https://www.yuneryi.com/api/v2/wechat/native';
+    const QUERY_URL = 'https://www.yuneryi.com/api/query';
+    const WECHAT_JSAPI_URL = 'https://www.yuneryi.com/api/v2/wechat/mp';
 
     public $appKey;
     public $appSecret;
@@ -88,7 +88,7 @@ class Eshanghu
      */
     public function getOpenidUrl(string $callbackUrl)
     {
-        $url = sprintf('https://1shanghu.com/v2/wechat/login?app_key=%s&sub_mch_id=%s&callback=%s', $this->appKey, $this->subMchId, $callbackUrl);
+        $url = sprintf('https://www.yuneryi.com/v2/wechat/login?app_key=%s&sub_mch_id=%s&callback=%s', $this->appKey, $this->subMchId, $callbackUrl);
 
         return $url;
     }
