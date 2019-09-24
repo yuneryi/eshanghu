@@ -1,19 +1,19 @@
 <?php
 
 /*
- * This file is part of the eshanghu-pay.
+ * This file is part of the Yuneryi-pay.
  *
  * (c) XiaoTeng <616896861@qq.com>
  */
 
-namespace Eshanghu;
+namespace Yuneryi;
 
 use GuzzleHttp\Client;
-use Eshanghu\Exceptions\EshanghuException;
-use Eshanghu\Exceptions\SignErrorException;
-use Eshanghu\Exceptions\HttpRequestErrorException;
+use Yuneryi\Exceptions\YuneryiException;
+use Yuneryi\Exceptions\SignErrorException;
+use Yuneryi\Exceptions\HttpRequestErrorException;
 
-class Eshanghu
+class Yuneryi
 {
     const WECHAT_NATIVE_URL = 'https://www.yuneryi.com/api/v2/wechat/native';
     const QUERY_URL = 'https://www.yuneryi.com/api/query';
