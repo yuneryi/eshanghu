@@ -18,13 +18,13 @@ composer install
 ```php
 <?php
 require_once '../vendor/autoload.php';
-$config = require_once '../eshanghu.php';
-$eshanghu = new \Eshanghu\Eshanghu($config);
+$config = require_once '../yuneryi.php';
+$yuneryi = new \Yuneryi\Yuneryi($config);
 $outTradeNo = 'A123123';
 $subject = '商品名称';
 $totalFee = 1; // 单位：分
 $extra = 'diy your self';
-$response = $eshanghu->create($outTradeNo, $subject, $totalFee, $extra);
+$response = $yuneryi->create($outTradeNo, $subject, $totalFee, $extra);
 ```
 
 ### 查询订单
@@ -32,9 +32,9 @@ $response = $eshanghu->create($outTradeNo, $subject, $totalFee, $extra);
 ```php
 <?php
 require_once '../vendor/autoload.php';
-$config = require_once '../eshanghu.php';
-$eshanghu = new \Eshanghu\Eshanghu($config);
+$config = require_once '../yuneryi.php';
+$yuneryi = new \Yuneryi\Yuneryi($config);
 $outTradeNo = 'A123123123123';
-$response = $eshanghu->queryUseOutTradeNo($outTradeNo);
+$response = $yuneryi->queryUseOutTradeNo($outTradeNo);
 var_dump($response);
 ```
